@@ -1,24 +1,47 @@
-# README
+# テーブル設計
+## usersテーブル
+| Column              | Type     | Options                 |
+| ------------------- | -------- | ----------------------- |
+| email               | string   | null:false,unique:true  |
+| password            | string   | null:false              |
+| nickname            | string   | null:false              |
+| boulder_grade_id    | integer  | null:false              |
+| lead_grade_id       | integer  | null:false              |
+| gender_id           | integer  | null:false              |
+| region_id           | integer  | null:false              |
+| age_id              | integer  | null:false              |
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### Association
+- has_many :information
+- has_many :comments
 
-* Ruby version
+## informationテーブル
+| Column              | Type           | Options                 |
+| ------------------- | --------       | ----------------------- |
+| region_id           | integer        | null:false              |
+| rock_quality_id     | integer        |                         |
+| address             | string         |                         |
+| season1_id          | integer        |                         |
+| season2_id          | integer        |                         |
+| grade_image_id      | integer        | null:false              |
+| people_day_id       | integer        |                         |
+| people_time_id      | integer        |                         |
+| shop_vibe_id        | integer        |                         |
+| people_vibe_id      | integer        |                         |
+<!-- | image          | Active Storage |                         | -->
 
-* System dependencies
+### Association
+- belongs_to :user
+- has_many :comments
 
-* Configuration
+## commentsテーブル
+| Column              | Type           | Options                 |
+| ------------------- | --------       | ----------------------- |
+| user_id             | integer        |                         |
+| information_id      | integer        |                         |
+| text                | text           | null:false              |
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :information
