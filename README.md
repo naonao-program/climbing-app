@@ -14,6 +14,7 @@
 
 ### Association
 - has_many :information
+- has_many :comments
 
 ## informationテーブル
 | Column              | Type           | Options                 |
@@ -32,4 +33,15 @@
 
 ### Association
 - belongs_to :user
+- has_many :comments
 
+## commentsテーブル
+| Column              | Type           | Options                 |
+| ------------------- | --------       | ----------------------- |
+| user_id             | integer        |                         |
+| information_id      | integer        |                         |
+| text                | text           | null:false              |
+
+### Association
+- belongs_to :user
+- belongs_to :information
