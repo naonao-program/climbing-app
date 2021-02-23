@@ -15,10 +15,12 @@
 ### Association
 - has_many :information
 - has_many :comments
+- has_many :favorite
 
 ## informationテーブル
 | Column              | Type           | Options                 |
 | ------------------- | --------       | ----------------------- |
+| name                | string
 | region_id           | integer        | null:false              |
 | rock_quality_id     | integer        |                         |
 | address             | string         |                         |
@@ -34,6 +36,7 @@
 ### Association
 - belongs_to :user
 - has_many :comments
+- belongs_to :favorite
 
 ## commentsテーブル
 | Column              | Type           | Options                 |
@@ -41,6 +44,16 @@
 | user_id             | integer        |                         |
 | information_id      | integer        |                         |
 | text                | text           | null:false              |
+
+### Association
+- belongs_to :user
+- belongs_to :information
+
+## favoriteテーブル
+| Column              | Type           | Options                 |
+| ------------------- | --------       | ----------------------- |
+| user_id             | integer        |                         |
+| information_id      | integer        |                         |
 
 ### Association
 - belongs_to :user
