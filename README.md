@@ -15,7 +15,8 @@
 
 
 ### Association
-- has_many :information
+- has_many :rock_information
+- has_many :gym_information
 - has_many :comments
 
 ## rock_informationテーブル

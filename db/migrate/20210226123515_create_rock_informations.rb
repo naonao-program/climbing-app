@@ -1,0 +1,18 @@
+class CreateRockInformations < ActiveRecord::Migration[6.0]
+  def change
+    create_table :rock_informations do |t|
+      t.string :name, null:false
+      t.integer :region_id, null:false
+      t.integer :rock_quality_id, null:false
+      t.string :address, null:false
+      t.integer :season1_id, null:false
+      t.integer :season2_id, null:false
+      t.integer :night_id, null:false
+      t.integer :grade_sence_id, null:false
+      t.integer :people_day_id, null:false
+      t.integer :people_time_id, null:false
+      t.integer :people_vibe_id, null:false
+      t.timestamps
+    end
+  end
+end
