@@ -6,6 +6,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.string :nickname, null: false
+      t.integer :boulder_gym_grade_id, null:false
+      t.integer :lead_gym_grade_id, null:false
+      t.integer :boulder_rock_grade_id, null:false
+      t.integer :lead_rock_grade_id,null:false
+      t.integer :gender_id, null:false
+      t.integer :region_id, null:false
+      t.integer :age_id, null:false
 
       ## Recoverable
       t.string   :reset_password_token
