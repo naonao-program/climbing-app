@@ -1,0 +1,24 @@
+<%= form_with(model: @rock, url:rock_information_index_path, local: true) do |f| %>
+  <div class="img-upload">
+    <div class="weight-bold-text">
+       出品画像
+      <span class="indispensable">必須</span>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+       </p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+  <%# /出品画像 %>
+
+  <span>岩場の名前</span><br/>
+  <%= f.text_field :name%><br/>
+
+  <span>岩場の地域</span><br/>
+  <%= f.collection_select(:region_id,Region.all, :id, :name, {}, {class:"select-box", id:"grade-category"})%><br/>
+
+  <%= f.submit "投稿する"%>
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+<% end %>
