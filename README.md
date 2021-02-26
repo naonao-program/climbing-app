@@ -33,6 +33,7 @@
 | people_day_id       | integer        | null:false              |
 | people_time_id      | integer        | null:false              |
 | people_vibe_id      | integer        | null:false              |
+| other               | text           |                         |
 <!-- | image          | Active Storage |                         | -->
 
 ### Association

@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_123515) do
     t.integer "people_day_id", null: false
     t.integer "people_time_id", null: false
     t.integer "people_vibe_id", null: false
+    t.text "other"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
